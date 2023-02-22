@@ -1,0 +1,27 @@
+[itemdef ${id}]
+defname=${defname}
+name=${nameAccentless}
+type=${type}
+${flipAndDupelist:-}
+dam=${damMin},${damMax}
+speed=${speed}
+range=${range}
+skill=${skill}
+reqstr=${reqstr}
+twohands=${twohands}
+weight=${weight}
+
+skillmake=${skillmake}
+resources=${resources}
+repair=${repair}
+
+${tevents}
+${tags}
+
+category=${category}
+subsection=${subsection}
+description=${description}
+
+on=@Create
+    f_craft_hitpoints ${hitsMin},${hitsMax}
+    ${nameu:-}
