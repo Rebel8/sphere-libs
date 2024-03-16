@@ -15,6 +15,8 @@ public class Item extends Entry {
 
     Long amount;
     Long cont;
+    String more1;
+    String more2;
 
     public int getAmount() {
         if (amount == null) {

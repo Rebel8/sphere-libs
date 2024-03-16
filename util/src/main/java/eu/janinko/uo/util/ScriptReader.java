@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ public class ScriptReader implements Iterator<String> {
     private final BufferedReader f;
     private String lowercaseLine;
     private int errCount;
-    private int errors = 4000;
+    private int errors = 400000;
     private int substring;
     private final Path file;
     private int lineNum;
@@ -47,13 +48,11 @@ public class ScriptReader implements Iterator<String> {
         f = Files.newBufferedReader(file, cs);
         this.file = file;
         nextLine = readLine();
-        //it = Files.lines(file, StandardCharsets.UTF_8).iterator();
     }
 
     @Override
     public boolean hasNext() {
         return nextLine != null;
-        //return it.hasNext();
     }
 
     private String readLine() throws IOException {

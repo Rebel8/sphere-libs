@@ -68,6 +68,10 @@ public class ItemParser extends AbstractSaveParser {
                 item.setName(it.substring(5));
             } else if (it.lowercase().startsWith("p=")) {
                 parsePosition(item, it.substring(2));
+            } else if (it.lowercase().startsWith("more1=")) {
+                item.setMore1(it.substring(6));
+            } else if (it.lowercase().startsWith("more2=")) {
+                item.setMore2(it.substring(6));
             } else if (it.line().startsWith("[")) {
                 it.back();
                 return;
@@ -77,6 +81,9 @@ public class ItemParser extends AbstractSaveParser {
                     item.put(split[0], "");
                 } else {
                     if (split[0].startsWith("TAG.")) {
+                        if (split[1].length() > 3 && split[1].startsWith("\"")){
+                            split[1]= split[1].substring(1,split[1].length() - 1);
+                        }
                         item.addTag(split[0].substring(4), split[1]);
                     } else {
                         item.put(split[0], split[1]);

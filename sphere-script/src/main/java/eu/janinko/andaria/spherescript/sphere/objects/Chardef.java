@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
- *
  * @author Honza Brázdil <janinko.g@gmail.com>
  */
 @Getter
@@ -22,13 +22,17 @@ public class Chardef extends Objectdef {
     private List<String> aversions = Collections.emptyList();
     private long anim;
     private List<String> speech = new ArrayList();
-    
+    private ElementalResists resistances = new ElementalResists();
+
+    @Setter
+    private PossibleRange karma;
+
     public Chardef(final String defid) {
         super(defid);
     }
 
     public void setArmor(long armor) {
-        this.armor = armor; 
+        this.armor = armor;
     }
 
     public void setMoverate(long moverate) {
@@ -46,9 +50,9 @@ public class Chardef extends Objectdef {
     public void setIcon(String icon) {
         this.icon = icon;
     }
-    
 
-    public void addSpeech(String speech){
+
+    public void addSpeech(String speech) {
         this.speech.add(speech);
     }
 
@@ -82,5 +86,4 @@ public class Chardef extends Objectdef {
     public String toString() {
         return "Chardef{" + "defname=" + defname + ", defid=" + defid + '}';
     }
-    
 }

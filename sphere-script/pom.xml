@@ -23,7 +23,7 @@
         <dependency>
             <groupId>com.ibm.icu</groupId>
             <artifactId>icu4j</artifactId>
-            <version>60.1-SNAPSHOT</version>
+            <version>60.1</version>
             <type>jar</type>
         </dependency>
         <dependency>

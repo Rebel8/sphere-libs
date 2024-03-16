@@ -74,7 +74,12 @@ public class CharParser extends AbstractSaveParser {
                 it.back();
                 return;
             } else {
-                //it.unknown();
+                String[] split = it.line().split("=");
+                if (split.length != 1) {
+                    if (split[0].startsWith("TAG.")) {
+                        character.addTag(split[0].substring(4), split[1]);
+                    }
+                }
             }
         }
     }

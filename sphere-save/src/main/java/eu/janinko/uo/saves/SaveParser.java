@@ -2,17 +2,20 @@ package eu.janinko.uo.saves;
 
 import eu.janinko.uo.saves.parsers.CharParser;
 import eu.janinko.uo.saves.parsers.ItemParser;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.function.BiConsumer;
 
 import eu.janinko.uo.util.ScriptReader;
+import lombok.Getter;
+
 import java.io.InputStream;
 
 /**
- *
  * @author Honza Brázdil <janinko.g@gmail.com>
  */
+@Getter
 public class SaveParser {
 
     private ScriptReader it;

@@ -1,7 +1,6 @@
 package eu.janinko.uo.util;
 
 /**
- *
  * @author janinko
  */
 public class AbstractParser {
